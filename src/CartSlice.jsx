@@ -1,5 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export const selectTotalItems = (state) => 
+    state.cart.items.reduce((total, item) => total + item.quantity, 0);
+
 export const CartSlice = createSlice({
   name: 'cart',
   initialState: {
